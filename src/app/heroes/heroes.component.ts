@@ -29,4 +29,11 @@ export class HeroesComponent implements OnInit {
     this.newHeroName = '';
   }
 
+  deleteHero(hero: Hero) {
+    this.heroes = this.heroes.filter(item => item !== hero);
+    if (this.selectedHero && this.selectedHero === hero) {
+      this.selectedHero = null;
+    }
+  }
+
 }
