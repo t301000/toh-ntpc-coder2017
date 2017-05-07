@@ -1,4 +1,4 @@
-# TohNtpcCoder2017
+# Angular Tour of Heroes example for NTPC Coder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
