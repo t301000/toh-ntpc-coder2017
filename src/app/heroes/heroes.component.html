@@ -29,7 +29,4 @@
 </div>
 <!-- 清單結束 -->
 
-<div *ngIf="selectedHero">
-  <h2>{{ selectedHero.name }} is my hero.</h2>
-  <a class="btn btn-info">View Details</a>
-</div>
+<app-mini-detail [hero]="selectedHero" *ngIf="selectedHero"></app-mini-detail>
