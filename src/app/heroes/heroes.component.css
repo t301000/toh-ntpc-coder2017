@@ -1,0 +1,14 @@
+.my-item {
+  position: relative;
+  margin-bottom: 5px;
+  left: 0;
+}
+
+.my-item:hover {
+  left: .3em;
+  transition: left .1s linear;
+}
+
+.my-item > span:first-child {
+  margin-right: 20px;
+}
