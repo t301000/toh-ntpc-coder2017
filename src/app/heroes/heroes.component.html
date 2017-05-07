@@ -13,20 +13,8 @@
 
 <!-- 清單 -->
 <div class="list-group">
-  <a class="list-group-item my-item" href="#">
-    <span>11</span> Mr. Nice<span class="badge">X</span>
-  </a>
-  <a class="list-group-item my-item" href="#">
-    <span>12</span> Narco<span class="badge">X</span>
-  </a>
-  <a class="list-group-item my-item" href="#">
-    <span>13</span> Bombasto<span class="badge">X</span>
-  </a>
-  <a class="list-group-item my-item active" href="#">
-    <span>14</span> Celeritas<span class="badge">X</span>
-  </a>
-  <a class="list-group-item my-item" href="#">
-    <span>15</span> Magneta<span class="badge">X</span>
+  <a class="list-group-item my-item" href="#" *ngFor="let hero of heroes">
+    <span>{{ hero.id }}</span>{{ hero.name }}<span class="badge"> X </span>
   </a>
 </div>
 <!-- 清單結束 -->
