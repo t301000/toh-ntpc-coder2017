@@ -5,9 +5,12 @@
 <div class="form-inline">
   <div class="form-group">
     <label for="name">Hero Name: </label>
-    <input type="text" class="form-control" id="name" placeholder="Hero's name">
+    <input type="text" class="form-control" id="name"
+           [placeholder]="hintWord" #newHero
+           (keydown.enter)="addHero(newHero.value); newHero.value=''">
   </div>
-  <button class="btn btn-primary">新增</button>
+  <button class="btn btn-primary"
+          (click)="addHero(newHero.value); newHero.value=''">新增</button>
 </div>
 <hr />
 
