@@ -10,6 +10,7 @@ import { Hero } from '../hero';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = HEROES;
+  selectedHero: Hero = null;
   constructor() { }
 
   ngOnInit() {

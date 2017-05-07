@@ -13,13 +13,16 @@
 
 <!-- 清單 -->
 <div class="list-group">
-  <a class="list-group-item my-item" href="#" *ngFor="let hero of heroes">
+  <a class="list-group-item my-item"
+      *ngFor="let hero of heroes"
+      (click)="selectedHero = hero"
+      [class.active]="selectedHero === hero">
     <span>{{ hero.id }}</span>{{ hero.name }}<span class="badge"> X </span>
   </a>
 </div>
 <!-- 清單結束 -->
 
-<div>
-  <h2>Bombasto is my hero.</h2>
-  <a class="btn btn-info" href="hero-detail.html">View Details</a>
+<div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name }} is my hero.</h2>
+  <a class="btn btn-info">View Details</a>
 </div>
