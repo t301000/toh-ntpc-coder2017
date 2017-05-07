@@ -5,12 +5,15 @@
 <div class="form-inline">
   <div class="form-group">
     <label for="name">Hero Name: </label>
+    <!--<input type="text" class="form-control" id="name"-->
+           <!--[placeholder]="hintWonewHeroNamewHero-->
+           <!--(keydown.enter)="addHnewHeroNameHero.valunewHeroNameHero.value=''">-->
     <input type="text" class="form-control" id="name"
-           [placeholder]="hintWord" #newHero
-           (keydown.enter)="addHero(newHero.value); newHero.value=''">
+           [placeholder]="hintWord" [(ngModel)]="newHeroName"
+           (keydown.enter)="addHero()">
   </div>
   <button class="btn btn-primary"
-          (click)="addHero(newHero.value); newHero.value=''">新增</button>
+          (click)="addHero()" [disabled]="!newHeroName.trim()">新增</button>
 </div>
 <hr />
 

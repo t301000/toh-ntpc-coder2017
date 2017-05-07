@@ -12,19 +12,21 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = HEROES;
   selectedHero: Hero = null;
   hintWord = 'New Hero\'s name';
+  newHeroName = '';
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  addHero(name: string) {
-    name = name.trim();
+  addHero() {
+    const name = this.newHeroName.trim();
     if (! name) {
       return;
     }
     const id = this.heroes[this.heroes.length - 1].id + 1;
     this.heroes.push({id, name});
+    this.newHeroName = '';
   }
 
 }
