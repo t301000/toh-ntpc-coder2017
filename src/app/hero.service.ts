@@ -36,6 +36,12 @@ export class HeroService {
               .catch(this.handleError);
   }
 
+  getHero(id: number): Observable<Hero> {
+    return this.http.get(`${this.baseUrl}/${id}`)
+              .map((res: Response) => res.json().data || {})
+              .catch(this.handleError);
+  }
+
   private handleError(error: Response | any): Observable<any> {
     // console.log(error);
     let errMsg: string;

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Bombasto Details</h1>
+  <h1>{{ hero.name }} Details</h1>
 </div>
 
 <div class="form-horizontal">
@@ -7,21 +7,21 @@
   <div class="form-group">
     <label class="col-sm-2 control-label">id:</label>
     <div class="col-sm-10">
-      <p class="form-control-static">13</p>
+      <p class="form-control-static">{{ hero.id }}</p>
     </div>
   </div>
 
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Name:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" value="Bombasto">
+      <input type="text" class="form-control" id="name" value="{{ hero.name }}">
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
-      <button class="btn btn-default">Back</button>
-      <button class="btn btn-primary">Save</button>
+      <button class="btn btn-default" (click)="goBack()">Back</button>
+      <button class="btn btn-primary" (click)="save()">Save</button>
     </div>
   </div>
 
