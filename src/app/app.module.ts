@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { MiniDetailComponent } from './mini-detail/mini-detail.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { HeroService } from './hero.service';
+import { HeroDB } from './heroes.data';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { HeroService } from './hero.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    InMemoryWebApiModule.forRoot(HeroDB, {delay: 0}), // must after HttpModule, default delay 500ms
     AppRoutingModule
   ],
   providers: [HeroService],
