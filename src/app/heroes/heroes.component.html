@@ -12,9 +12,9 @@
       (click)="selectedHero = hero"
       [class.active]="selectedHero === hero">
     <span>{{ hero.id }}</span>{{ hero.name }}
-    <span class="badge" (click)="deleteHero(hero)"> X </span>
+    <span class="badge" (click)="deleteHero(hero); $event.stopPropagation()"> X </span>
   </a>
 </div>
 <!-- 清單結束 -->
-
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
 <app-mini-detail [hero]="selectedHero" *ngIf="selectedHero"></app-mini-detail>

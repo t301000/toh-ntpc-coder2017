@@ -11,31 +11,45 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero: Hero = null;
+  errorMessage: string = null;
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
     this.heroService.getHeroes()
-        .then(heroes => this.heroes = heroes);
+        .subscribe(
+          heroes => this.heroes = heroes,
+          this.showError.bind(this)
+        );
   }
 
   addHero(name: string) {
     this.heroService.addHero(name)
-        .then(hero => this.heroes.push(hero));
+        .subscribe(
+          hero => this.heroes.push(hero),
+          this.showError.bind(this)
+        );
   }
 
   deleteHero(hero: Hero) {
     this.heroService.deleteHero(hero.id)
-        .then(() => {
-          this.heroes = this.heroes.filter(item => item !== hero);
-          this.resetSelectedHero(hero);
-        });
+        .subscribe(
+          () => {
+            this.heroes = this.heroes.filter(item => item !== hero);
+            this.resetSelectedHero(hero);
+          },
+          this.showError.bind(this)
+        );
   }
 
   private resetSelectedHero(hero: Hero) {
     if (this.selectedHero && this.selectedHero === hero) {
       this.selectedHero = null;
     }
+  }
+
+  private showError(error: string) {
+    this.errorMessage = error;
   }
 
 }
