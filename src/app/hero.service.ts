@@ -42,6 +42,16 @@ export class HeroService {
               .catch(this.handleError);
   }
 
+  updateHero(id: number, name: string): Observable<any> {
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    const options = new RequestOptions({headers});
+    return this.http.put(`${this.baseUrl}/${id}`, {id, name}, options)
+              .map(() => null)
+              .catch(this.handleError);
+  }
+
   private handleError(error: Response | any): Observable<any> {
     // console.log(error);
     let errMsg: string;
