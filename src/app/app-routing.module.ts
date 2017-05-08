@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   {path: 'heroes', component: HeroesComponent},
   {path: 'dashboard', component: DashboardComponent},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
