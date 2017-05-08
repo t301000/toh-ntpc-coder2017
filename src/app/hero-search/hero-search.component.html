@@ -1,0 +1,12 @@
+<div class="row">
+  <h3 class="col-xs-12">Hero Search</h3>
+  <div class="form-group">
+    <div class="col-sm-3">
+      <input type="text" class="form-control" placeholder="search ...."
+             #keyword (input)="search(keyword.value.trim())">
+      <div class="list-group" *ngIf="(results$ | async) as heroes">
+        <a [routerLink]="['/heroes', hero?.id]" class="list-group-item" *ngFor="let hero of heroes">{{ hero?.name }}</a>
+      </div>
+    </div>
+  </div>
+</div>

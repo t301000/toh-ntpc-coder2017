@@ -15,6 +15,7 @@ import { HeroDB } from './heroes.data';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     NewHeroComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,

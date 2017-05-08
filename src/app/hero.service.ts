@@ -5,8 +5,9 @@ import { Hero } from './hero';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-// import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class HeroService {
@@ -50,6 +51,12 @@ export class HeroService {
     return this.http.put(`${this.baseUrl}/${id}`, {id, name}, options)
               .map(() => null)
               .catch(this.handleError);
+  }
+
+  searchHero(keyword: string): Observable<Hero[]> {
+    return this.http.get(`${this.baseUrl}/?name=${keyword}`).do(() => console.log(keyword))
+               .map((res: Response) => res.json().data as Hero[] || [])
+               .catch(this.handleError);
   }
 
   private handleError(error: Response | any): Observable<any> {
