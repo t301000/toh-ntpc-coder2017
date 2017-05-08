@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Hero } from '../hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mini-detail',
@@ -9,9 +10,13 @@ import { Hero } from '../hero';
 export class MiniDetailComponent implements OnInit {
   @Input() hero: Hero;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goDetail() {
+    this.router.navigate(['/heroes', this.hero.id]);
   }
 
 }
