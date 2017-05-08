@@ -1,0 +1,5 @@
+.well:hover {
+  background-color: #74768b;
+  color: #ffffff;
+  cursor: pointer;
+}
