@@ -12,6 +12,7 @@ import { MiniDetailComponent } from './mini-detail/mini-detail.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { HeroService } from './hero.service';
 import { HeroDB } from './heroes.data';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeroDB } from './heroes.data';
     NavbarComponent,
     HeroesComponent,
     MiniDetailComponent,
-    NewHeroComponent
+    NewHeroComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
